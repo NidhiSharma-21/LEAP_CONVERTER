@@ -7,8 +7,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-<link rel="stylesheet" href="../styles/styles.css">
-
+<link rel="stylesheet" href="styles.css">
 <style>
     #box {
         padding: 3rem;
@@ -86,6 +85,7 @@
 
         .container4 {
             /* margin-top: 40px; */
+            overflow: hidden;
             border: 5px dotted red;
             display: flex;
             justify-content: center;
@@ -110,25 +110,15 @@
         .container5 h1 {
             font-size: 2.125rem;
         }
+
+        .split-heading h1 {
+            font-size: 2.25rem;
+        }
     }
 
     .container3 .fa {
         font-size: 200px;
     }
-
-    .split-options a {
-        color: red;
-        text-decoration: none;
-        font-weight: 600;
-
-    }
-
-    .container5 a {
-        color: red;
-        text-decoration: none;
-
-    }
-
 
     .upload-container {
         border: 3px dotted #ccc;
@@ -146,10 +136,12 @@
         border: none;
         color: white;
         transition: background-color 0.3s;
+        /* Add transition for smooth color change on hover */
     }
 
     .btn-darkred:hover {
-        background-color: red-orange;
+        background-color: rgba(238, 7, 7, 0.053);
+        /* Reddish-orange color on hover */
         color: white;
     }
 
@@ -161,12 +153,15 @@
         display: none;
     }
 
+    /* .split- {
+        border: 1px solid #ccc;
+        padding: 20px;
+    } */
 
     .split-heading {
         font-size: 20px;
         font-weight: bold;
     }
-
 
     .split-container {
         display: flex;
@@ -222,13 +217,12 @@
     }
 
     .split-button {
+        width: 200px;
+        padding: 1rem;
         background-color: darkred;
         border: none;
         color: white;
-        width: 200px;
-        padding: 1rem;
         transition: background-color 0.3s;
-
     }
 
     .split-button:hover {
@@ -321,7 +315,6 @@
         display: flex;
         margin-left: -4px;
         margin-right: -4px;
-
     }
 
     @media (max-width: 930px) {
@@ -398,8 +391,50 @@
         border: 2px solid #e5322d;
     }
 
+    .input--icon .input,
+    .input--icon input,
+    .input--icon select {
+        padding-left: 36px;
+    }
+
+    .moreinfo svg {
+        width: 10px;
+        height: 10px;
+    }
+
+    svg:not(:root) {
+        overflow: hidden;
+    }
+
     h6 {
         margin: 0;
+    }
+
+    .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        color: #fff;
+        background-color: darkred;
+        border: 2px solid darkred;
+        outline: none !important;
+        margin: 10px 0;
+        transition: all .3s ease;
+        font-size: 1rem;
+    }
+
+    .btn:hover {
+        background-color: #fff;
+    }
+
+    .btn:hover svg {
+        fill: #000;
+    }
+
+    .btn svg {
+        fill: #fff;
+        transition: all .3s ease;
     }
 </style>
 </head>
@@ -414,9 +449,9 @@
             </div>
             <div class="nav-left">
                 <ul class="nav-links">
-                    <li><a href="../templates/merge preview.html">MERGE PDF</a></li>
-                    <li><a href="../templates/split preview.html">SPLIT PDF</a></li>
-                    <li> <a href="../templates/compress preview.html">COMPRESS PDF</a></li>
+                    <li><a href="merge preview.html">MERGE PDF</a></li>
+                    <li><a href="split preview.html">SPLIT PDF</a></li>
+                    <li> <a href="compress preview.html">COMPRESS PDF</a></li>
                     <li class="dropdown" onclick="convertDropdown()"><a href="#">CONVERT PDF <i
                                 class="bi bi-caret-down-fill"></i></a>
                         <div class="convert-dropdown">
@@ -424,42 +459,42 @@
                             <ul class="dropdown-content">
                                 <li><span>Convert to PDF</span>
                                     <ul class="dropdown-content-ul">
-                                        <li><a href="../templates/JPG to pdf preview.html"><img
-                                                    src="../assets/jpgToPdf.svg" alt="">JPG TO
+                                        <li><a href="JPG to pdf preview.html"><img
+                                                    src="jpgToPdf.svg" alt="">JPG TO
                                                 PDF</a></li>
-                                        <li><a href="../templates/word to pdf preview.html"><img
-                                                    src="../assets/wordToPdf.svg" alt="">WORD
+                                        <li><a href="word to pdf preview.html"><img
+                                                    src="wordToPdf.svg" alt="">WORD
                                                 TO PDF</a>
                                         </li>
-                                        <li><a href="../templates/powerpoint to pdf preview.html"><img
-                                                    src="../assets/pptToPdf.svg" alt="">POWERPOINT TO PDF</a>
+                                        <li><a href="powerpoint to pdf preview.html"><img
+                                                    src="pptToPdf.svg" alt="">POWERPOINT TO PDF</a>
                                         </li>
-                                        <li><a href="../templates/excel to pdf preview.html"><img
-                                                    src="../assets/excleToPdf.svg" alt="">EXCEL TO
+                                        <li><a href="excel to pdf preview.html"><img
+                                                    src="excleToPdf.svg" alt="">EXCEL TO
                                                 PDF</a></li>
-                                        <li><a href="../templates/html to pdf preview.html"><img
-                                                    src="../assets/htmlToPdf.svg" alt="">HTML
+                                        <li><a href="html to pdf preview.html"><img
+                                                    src="htmlToPdf.svg" alt="">HTML
                                                 TO PDF</a></li>
                                     </ul>
                                 </li>
                                 <li><span>Convert from PDF</span>
                                     <ul class="dropdown-content-ul">
-                                        <li><a href="../templates/pdf to jpg preview.html"><img
-                                                    src="../assets/pdfToJpg.svg" alt="">PDF TO
+                                        <li><a href="pdf to jpg preview.html"><img
+                                                    src="pdfToJpg.svg" alt="">PDF TO
                                                 JPG</a></li>
-                                        <li><a href="../templates/pdf to word preview.html"><img
-                                                    src="../assets/pdfToWord.svg" alt="">PDF
+                                        <li><a href="pdf to word preview.html"><img
+                                                    src="pdfToWord.svg" alt="">PDF
                                                 TO WORD</a>
                                         </li>
-                                        <li><a href="../templates/pdf to powerpoint preview.html"><img
-                                                    src="../assets/pdfToPpt.svg" alt="">PDF TO POWERPOINT</a>
+                                        <li><a href="pdf to powerpoint preview.html"><img
+                                                    src="pdfToPpt.svg" alt="">PDF TO POWERPOINT</a>
                                         </li>
-                                        <li><a href="../templates/pdf to excel preview.html"><img
-                                                    src="../assets/pdfToExcle.svg" alt="">PDF
+                                        <li><a href="pdf to excel preview.html"><img
+                                                    src="pdfToExcle.svg" alt="">PDF
                                                 TO
                                                 EXCEL</a></li>
-                                        <li><a href="../templates/pdf to pdfa preview.html"><img
-                                                    src="../assets/pdfToWPdfa.svg" alt="">PDF
+                                        <li><a href="pdf to pdfa preview.html"><img
+                                                    src="pdfToWPdfa.svg" alt="">PDF
                                                 TO PDF/A</a>
                                         </li>
                                     </ul>
@@ -475,29 +510,29 @@
                             <ul class="dropdown-content">
                                 <li><span>ORGANIZE PDF</span>
                                     <ul class="dropdown-content-ul">
-                                        <li><a href="../templates/merge preview.html"><img src="../assets/mergePdf.svg"
+                                        <li><a href="merge preview.html"><img src="mergePdf.svg"
                                                     alt="">MERGE
                                                 PDF</a></li>
-                                        <li><a href="../templates/split preview.html"><img src="../assets/splitPdf.svg"
+                                        <li><a href="split preview.html"><img src="splitPdf.svg"
                                                     alt="">SPLIT
                                                 PDF</a>
                                         </li>
-                                        <li><a href="../templates/organize pdf preview.html"><img
-                                                    src="../assets/organizepdf.svg" alt="">ORGANIZE PDF</a>
+                                        <li><a href="organize pdf preview.html"><img
+                                                    src="organizepdf.svg" alt="">ORGANIZE PDF</a>
                                         </li>
-                                        <li><a href="#"><img src="../assets/scanToPdf.svg" alt="">SCAN TO
+                                        <li><a href="#"><img src="scanToPdf.svg" alt="">SCAN TO
                                                 PDF</a></li>
                                     </ul>
                                 </li>
                                 <li><span>OPTIMIZE PDF</span>
                                     <ul class="dropdown-content-ul">
-                                        <li><a href="../templates/compress preview.html"><img
-                                                    src="../assets/compressPdf.svg" alt="">COMPRESS PDF</a>
+                                        <li><a href="compress preview.html"><img
+                                                    src="compressPdf.svg" alt="">COMPRESS PDF</a>
                                         </li>
-                                        <li><a href="../templates/Repair preview.html"><img
-                                                    src="../assets/repairPdf.svg" alt="">REPAIR PDF</a>
+                                        <li><a href="Repair preview.html"><img
+                                                    src="repairPdf.svg" alt="">REPAIR PDF</a>
                                         </li>
-                                        <li><a href="../templates/ocr pdf preview.html"><img src="../assets/ocrPdf.svg"
+                                        <li><a href="ocr pdf preview.html"><img src="ocrPdf.svg"
                                                     alt="">OCR
                                                 PDF</a>
                                         </li>
@@ -505,71 +540,71 @@
                                 </li>
                                 <li><span>Convert to PDF</span>
                                     <ul class="dropdown-content-ul">
-                                        <li><a href="../templates/JPG to pdf preview.html"><img
-                                                    src="../assets/jpgToPdf.svg" alt="">JPG TO
+                                        <li><a href="JPG to pdf preview.html"><img
+                                                    src="jpgToPdf.svg" alt="">JPG TO
                                                 PDF</a></li>
-                                        <li><a href="../templates/word to pdf preview.html"><img
-                                                    src="../assets/wordToPdf.svg" alt="">WORD
+                                        <li><a href="word to pdf preview.html"><img
+                                                    src="wordToPdf.svg" alt="">WORD
                                                 TO PDF</a>
                                         </li>
-                                        <li><a href="../templates/powerpoint to pdf preview.html"><img
-                                                    src="../assets/pptToPdf.svg" alt="">POWERPOINT TO PDF</a>
+                                        <li><a href="powerpoint to pdf preview.html"><img
+                                                    src="pptToPdf.svg" alt="">POWERPOINT TO PDF</a>
                                         </li>
-                                        <li><a href="../templates/excel to pdf preview.html"><img
-                                                    src="../assets/excleToPdf.svg" alt="">EXCEL TO
+                                        <li><a href="excel to pdf preview.html"><img
+                                                    src="excleToPdf.svg" alt="">EXCEL TO
                                                 PDF</a></li>
-                                        <li><a href="../templates/html to pdf preview.html"><img
-                                                    src="../assets/htmlToPdf.svg" alt="">HTML
+                                        <li><a href="html to pdf preview.html"><img
+                                                    src="htmlToPdf.svg" alt="">HTML
                                                 TO PDF</a></li>
                                     </ul>
                                 </li>
                                 <li><span>Convert from PDF</span>
                                     <ul class="dropdown-content-ul">
-                                        <li><a href="../templates/pdf to jpg preview.html"><img
-                                                    src="../assets/pdfToJpg.svg" alt="">PDF TO
+                                        <li><a href="pdf to jpg preview.html"><img
+                                                    src="pdfToJpg.svg" alt="">PDF TO
                                                 JPG</a></li>
-                                        <li><a href="../templates/pdf to word preview.html"><img
-                                                    src="../assets/pdfToWord.svg" alt="">PDF
+                                        <li><a href="pdf to word preview.html"><img
+                                                    src="pdfToWord.svg" alt="">PDF
                                                 TO WORD</a>
                                         </li>
-                                        <li><a href="../templates/pdf to powerpoint preview.html"><img
-                                                    src="../assets/pdfToPpt.svg" alt="">PDF TO POWERPOINT</a>
+                                        <li><a href="pdf to powerpoint preview.html"><img
+                                                    src="pdfToPpt.svg" alt="">PDF TO POWERPOINT</a>
                                         </li>
-                                        <li><a href="../templates/pdf to excel preview.html"><img
-                                                    src="../assets/pdfToExcle.svg" alt="">PDF
+                                        <li><a href="pdf to excel preview.html"><img
+                                                    src="pdfToExcle.svg" alt="">PDF
                                                 TO
                                                 EXCEL</a></li>
-                                        <li><a href="../templates/pdf to pdfa preview.html"><img
-                                                    src="../assets/pdfToWPdfa.svg" alt="">PDF
+                                        <li><a href="pdf to pdfa preview.html"><img
+                                                    src="pdfToWPdfa.svg" alt="">PDF
                                                 TO PDF/A</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li><span>EDIT PDF</span>
                                     <ul class="dropdown-content-ul">
-                                        <li><a href="../templates/rotate pdf preview.html"><img
-                                                    src="../assets/rotatePdf.svg" alt="">ROTATE PDF</a></li>
-                                        <li><a href="../templates/pagenumberpreview.html"><img
-                                                    src="../assets/pageNoPdf.svg" alt="">ADD
+                                        <li><a href="rotate pdf preview.html"><img
+                                                    src="rotatePdf.svg" alt="">ROTATE PDF</a></li>
+                                        <li><a href="pagenumberpreview.html"><img
+                                                    src="pageNoPdf.svg" alt="">ADD
                                                 PAGE NUMBER</a>
                                         </li>
-                                        <li><a href="../templates/watermark preview.html"><img
-                                                    src="../assets/watermark.svg" alt="">ADD Watermark</a>
+                                        <li><a href="watermark preview.html"><img
+                                                    src="watermark.svg" alt="">ADD Watermark</a>
                                         </li>
-                                        <li><a href="../templates/edit pdf options preview.html"><img
-                                                    src="../assets/editPdf.svg" alt="">EDIT
+                                        <li><a href="edit pdf options preview.html"><img
+                                                    src="editPdf.svg" alt="">EDIT
                                                 PDF</a></li>
                                     </ul>
                                 </li>
                                 <li><span>PDF SECUIRTY</span>
                                     <ul class="dropdown-content-ul">
-                                        <li><a href="../templates/unlockpdf preview.html"><img
-                                                    src="../assets/unlockPdf.svg" alt="">UNLOCK PDF</a></li>
-                                        <li><a href="../templates/protectpdf preview.html"><img
-                                                    src="../assets/protectPdf.svg" alt="">PROTECT PDF</a>
+                                        <li><a href="unlockpdf preview.html"><img
+                                                    src="unlockPdf.svg" alt="">UNLOCK PDF</a></li>
+                                        <li><a href="protectpdf preview.html"><img
+                                                    src="protectPdf.svg" alt="">PROTECT PDF</a>
                                         </li>
-                                        <li><a href="../templates/sign pdf preview.html"><img
-                                                    src="../assets/signPdf.svg" alt="">SIGN
+                                        <li><a href="sign pdf preview.html"><img
+                                                    src="signPdf.svg" alt="">SIGN
                                                 PDF</a>
                                         </li>
                                     </ul>
@@ -589,7 +624,7 @@
                     <p>Drag and drop a PDF file here</p>
                     <i class="fa fa-upload" aria-hidden="true"></i>
                     <p>or</p>
-                    <input type="file" id="file-input" accept=".pdf ">
+                    <input type="file" id="file-input" accept=".pdf">
                 </div>
 
             </div>
@@ -601,10 +636,53 @@
         </div>
         <div class="container5">
             <div class="split-heading">
-                <h1>Image to PDF Options</h1>
+                <h1>HTML TO PDF</h1>
             </div>
             <hr>
-            <h4>Page Orientation</h4>
+            <h5>Website URL</h5>
+            <input name="url" class="input inputUrl option" type="text"
+                placeholder="Example: https://leapconverter.com">
+            <button class="btn" id="refreshUrl">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 22 22" fill="#373e46"
+                    fill-rule="nonzero">
+                    <path
+                        d="M1.76 16.595L.442 17.922a.24.24 0 0 0 .134.404l4.675.672c.156.022.3-.112.268-.27l-.668-4.705c-.028-.194-.264-.273-.4-.135l-.974.98A8.36 8.36 0 0 1 4.783 4.815a8.21 8.21 0 0 1 6.408-2.417l.2-.076 1.556-1.7C13.07.486 13 .266 12.82.228a10.57 10.57 0 0 0-9.698 2.906A10.75 10.75 0 0 0 1.77 16.595zm15.47.51c-1.96 2.012-4.732 2.853-7.403 2.322-.077-.015-.156.01-.212.066L8.07 21.08c-.125.128-.073.346.095.402 3.752 1.232 7.896.243 10.732-2.667 3.833-3.933 4.14-10.18.788-14.475l1.2-1.243c.137-.14.06-.382-.133-.4l-4.663-.683c-.156-.023-.3.114-.267.274l.666 4.784c.027.197.263.278.4.137l1.106-1.135c2.438 3.336 2.14 8.053-.774 11.043z">
+                    </path>
+                </svg> <span>Refresh</span>
+            </button>
+            <div class="sizes">
+                <h5>Screen Size</h5>
+                <select name="pagesize" id="pagesize" class="input option">
+                    <option value="fit">Your Screen(1366px)</option>
+                    <option value="A4">Desktop HD(1920px)</option>
+                    <option value="letter">Desktop(1440px)</option>
+                    <option value="letter">Tablet(768px)</option>
+                    <option value="letter">Mobile(320px)</option>
+                </select>
+            </div>
+            <div class="sizes">
+                <h5>Page Size</h5>
+                <select name="pagesize" id="pagesize" class="input option">
+                    <option value="fit">A3 (297x420mm)</option>
+                    <option value="A4">A4 (297x210 mm)</option>
+                    <option value="A4">A4 (148x210 mm)</option>
+                    <option value="letter">US Letter (216x279 mm)</option>
+                </select>
+            </div>
+            <p><input type="checkbox" id="mergeCheckbox">One Long Page
+                <svg height="20" viewBox="0 0 9 20" width="9" xmlns="http://www.w3.org/2000/svg">
+                    <g fill="#E5322D" fill-rule="evenodd">
+                        <path
+                            d="m5.33334546 5.7271381c1.5536381.0152627 2.83310477-1.26922169 2.84833652-2.84097724.01523175-1.58671601-1.24900318-2.87120039-2.83310477-2.88616086-1.58410159 0-2.87880001 1.25411011-2.89403176 2.84082612 0 1.57160443 1.27946668 2.8712004 2.87880001 2.88631198">
+                        </path>
+                        <path
+                            d="m8.31443906 17.0283037c-.253125.0944704-.4921875.2699156-.7453125.3643861-.3234375.121597-.646875.2294283-.984375.2699156-.4078125.0404874-.703125-.1619494-.8015625-.5398313-.0703125-.2832764-.1125-.5936794-.084375-.8772258.0703125-.6073102.196875-1.2009897.309375-1.8082999.3375-1.8085699.703125-3.6170047 1.0265625-5.43893537.084375-.48584818.1828125-.98519213.16875-1.48453609-.0140625-.59367947-.3796875-.87722586-.9984375-.87722586h-2.5734375-2.4328125c-.196875 0-.4078125.01363074-.6046875.0406223-.3796875.06747892-.5625.24292409-.590625.52620057-.028125.25655482.1125.51283973.4640625.63430178.28125.09460543.5765625.121597.871875.16208434.675.09447048.9.32376383.9.98505717 0 .10796627-.0140625.20243674-.028125.310403-.28125 1.59250236-.590625 3.17150886-.871875 4.76401126-.1546875.9178482-.309375 1.8219306-.4359375 2.7397788-.196875 1.3359475 1.153125 2.604686 2.2078125 2.7396439.6328125.0808397 1.2796875.1078313 1.9265625.0944704 1.378125-.0136307 2.53125-.5804536 3.5015625-1.5115276.16875-.1620843.309375-.3915127.365625-.6073102.1125-.3778819-.196875-.6344368-.590625-.4859831">
+                        </path>
+                    </g>
+                </svg>
+            </p>
+            <h5>Orientation</h5>
+
             <div class="split-container">
                 <div class="split-option" id="splitByRange">
                     <!-- Replace the existing icon with the provided SVG -->
@@ -640,16 +718,9 @@
                     </button>
                 </div>
             </div>
-            <div class="sizes">
-                <h3>Page Size</h3>
-                <select name="pagesize" id="pagesize" class="input option">
-                    <option value="fit">Fit (Same page size as image)</option>
-                    <option value="A4">A4 (297x210 mm)</option>
-                    <option value="letter">US Letter (215x279.4 mm)</option>
-                </select>
-            </div>
+
             <div class="option__title">
-                <h3> Margin</h3>
+                <h5> Page Margin</h5>
             </div>
             <ul class="option__image">
                 <li class="option__image__item" data-name="margin" data-value="0">
@@ -693,49 +764,30 @@
                                         <polygon id="Shape" fill-rule="nonzero" points="2 2 4 2 4 4 2 4"></polygon>
                                         <polygon id="Shape" fill-rule="nonzero" points="0 4 2 4 2 6 0 6"></polygon>
                                         <polygon id="Shape" fill-rule="nonzero" points="2 6 4 6 4 8 2 8"></polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="0 8 2 8 2 10 0 10">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="2 10 4 10 4 12 2 12">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="0 12 2 12 2 14 0 14">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="2 14 4 14 4 16 2 16">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="0 16 2 16 2 18 0 18">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="2 18 4 18 4 20 2 20">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="0 20 2 20 2 22 0 22">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="2 22 4 22 4 24 2 24">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="0 24 2 24 2 26 0 26">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="2 26 4 26 4 28 2 28">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="0 28 2 28 2 30 0 30">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="4 28 6 28 6 30 4 30">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="2 30 4 30 4 32 2 32">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="6 30 8 30 8 32 6 32">
-                                        </polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="0 8 2 8 2 10 0 10"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="2 10 4 10 4 12 2 12"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="0 12 2 12 2 14 0 14"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="2 14 4 14 4 16 2 16"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="0 16 2 16 2 18 0 18"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="2 18 4 18 4 20 2 20"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="0 20 2 20 2 22 0 22"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="2 22 4 22 4 24 2 24"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="0 24 2 24 2 26 0 26"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="2 26 4 26 4 28 2 28"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="0 28 2 28 2 30 0 30"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="4 28 6 28 6 30 4 30"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="2 30 4 30 4 32 2 32"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="6 30 8 30 8 32 6 32"></polygon>
                                         <polygon id="Shape" fill-rule="nonzero" points="10 30 12 30 12 32 10 32">
                                         </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="8 0 10 0 10 2 8 2">
-                                        </polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="8 0 10 0 10 2 8 2"></polygon>
                                         <polygon id="Shape" fill-rule="nonzero" points="6 2 8 2 8 4 6 4"></polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="10 2 12 2 12 4 10 4">
-                                        </polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="10 2 12 2 12 4 10 4"></polygon>
                                         <polygon id="Shape" fill-rule="nonzero" points="8 28 10 28 10 30 8 30">
                                         </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="12 0 14 0 14 2 12 2">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="16 0 18 0 18 2 16 2">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="14 2 16 2 16 4 14 4">
-                                        </polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="12 0 14 0 14 2 12 2"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="16 0 18 0 18 2 16 2"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="14 2 16 2 16 4 14 4"></polygon>
                                         <polygon id="Shape" fill-rule="nonzero" points="12 28 14 28 14 30 12 30">
                                         </polygon>
                                         <polygon id="Shape" fill-rule="nonzero" points="16 28 18 28 18 30 16 30">
@@ -746,22 +798,15 @@
                                         </polygon>
                                         <polygon id="Shape" fill-rule="nonzero" points="22 30 24 30 24 32 22 32">
                                         </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="20 0 22 0 22 2 20 2">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="18 2 20 2 20 4 18 4">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="22 2 24 2 24 4 22 4">
-                                        </polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="20 0 22 0 22 2 20 2"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="18 2 20 2 20 4 18 4"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="22 2 24 2 24 4 22 4"></polygon>
                                         <polygon id="Shape" fill-rule="nonzero" points="20 28 22 28 22 30 20 30">
                                         </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="24 0 26 0 26 2 24 2">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="28 0 30 0 30 2 28 2">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="26 2 28 2 28 4 26 4">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="28 4 30 4 30 6 28 6">
-                                        </polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="24 0 26 0 26 2 24 2"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="28 0 30 0 30 2 28 2"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="26 2 28 2 28 4 26 4"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="28 4 30 4 30 6 28 6"></polygon>
                                         <polygon id="Shape" fill-rule="nonzero" points="28 8 30 8 30 10 28 10">
                                         </polygon>
                                         <polygon id="Shape" fill-rule="nonzero" points="28 12 30 12 30 14 28 14">
@@ -780,10 +825,8 @@
                                         </polygon>
                                         <polygon id="Shape" fill-rule="nonzero" points="30 30 32 30 32 32 30 32">
                                         </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="30 2 32 2 32 4 30 4">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="30 6 32 6 32 8 30 8">
-                                        </polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="30 2 32 2 32 4 30 4"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="30 6 32 6 32 8 30 8"></polygon>
                                         <polygon id="Shape" fill-rule="nonzero" points="30 10 32 10 32 12 30 12">
                                         </polygon>
                                         <polygon id="Shape" fill-rule="nonzero" points="30 14 32 14 32 16 30 16">
@@ -827,49 +870,30 @@
                                         <polygon id="Shape" fill-rule="nonzero" points="0 4 2 4 2 6 0 6"></polygon>
                                         <polygon id="Shape" fill-rule="nonzero" points="4 4 6 4 6 6 4 6"></polygon>
                                         <polygon id="Shape" fill-rule="nonzero" points="2 6 4 6 4 8 2 8"></polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="0 8 2 8 2 10 0 10">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="2 10 4 10 4 12 2 12">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="0 12 2 12 2 14 0 14">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="2 14 4 14 4 16 2 16">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="0 16 2 16 2 18 0 18">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="2 18 4 18 4 20 2 20">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="0 20 2 20 2 22 0 22">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="2 22 4 22 4 24 2 24">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="0 24 2 24 2 26 0 26">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="2 26 4 26 4 28 2 28">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="0 28 2 28 2 30 0 30">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="4 28 6 28 6 30 4 30">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="2 30 4 30 4 32 2 32">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="6 30 8 30 8 32 6 32">
-                                        </polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="0 8 2 8 2 10 0 10"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="2 10 4 10 4 12 2 12"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="0 12 2 12 2 14 0 14"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="2 14 4 14 4 16 2 16"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="0 16 2 16 2 18 0 18"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="2 18 4 18 4 20 2 20"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="0 20 2 20 2 22 0 22"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="2 22 4 22 4 24 2 24"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="0 24 2 24 2 26 0 26"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="2 26 4 26 4 28 2 28"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="0 28 2 28 2 30 0 30"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="4 28 6 28 6 30 4 30"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="2 30 4 30 4 32 2 32"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="6 30 8 30 8 32 6 32"></polygon>
                                         <polygon id="Shape" fill-rule="nonzero" points="10 30 12 30 12 32 10 32">
                                         </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="8 0 10 0 10 2 8 2">
-                                        </polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="8 0 10 0 10 2 8 2"></polygon>
                                         <polygon id="Shape" fill-rule="nonzero" points="6 2 8 2 8 4 6 4"></polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="10 2 12 2 12 4 10 4">
-                                        </polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="10 2 12 2 12 4 10 4"></polygon>
                                         <polygon id="Shape" fill-rule="nonzero" points="8 28 10 28 10 30 8 30">
                                         </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="12 0 14 0 14 2 12 2">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="16 0 18 0 18 2 16 2">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="14 2 16 2 16 4 14 4">
-                                        </polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="12 0 14 0 14 2 12 2"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="16 0 18 0 18 2 16 2"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="14 2 16 2 16 4 14 4"></polygon>
                                         <polygon id="Shape" fill-rule="nonzero" points="12 28 14 28 14 30 12 30">
                                         </polygon>
                                         <polygon id="Shape" fill-rule="nonzero" points="16 28 18 28 18 30 16 30">
@@ -880,25 +904,18 @@
                                         </polygon>
                                         <polygon id="Shape" fill-rule="nonzero" points="22 30 24 30 24 32 22 32">
                                         </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="20 0 22 0 22 2 20 2">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="18 2 20 2 20 4 18 4">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="22 2 24 2 24 4 22 4">
-                                        </polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="20 0 22 0 22 2 20 2"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="18 2 20 2 20 4 18 4"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="22 2 24 2 24 4 22 4"></polygon>
                                         <polygon id="Shape" fill-rule="nonzero" points="20 28 22 28 22 30 20 30">
                                         </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="24 0 26 0 26 2 24 2">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="28 0 30 0 30 2 28 2">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="26 2 28 2 28 4 26 4">
-                                        </polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="24 0 26 0 26 2 24 2"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="28 0 30 0 30 2 28 2"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="26 2 28 2 28 4 26 4"></polygon>
                                         <path
                                             d="M26,4 L24,4 L24,6 L22,6 L22,4 L20,4 L20,6 L18,6 L18,4 L16,4 L16,6 L14,6 L14,4 L12,4 L12,6 L10,6 L10,4 L8,4 L8,6 L6,6 L6,8 L4,8 L4,10 L6,10 L6,12 L4,12 L4,14 L6,14 L6,16 L4,16 L4,18 L6,18 L6,20 L4,20 L4,22 L6,22 L6,24 L4,24 L4,26 L6,26 L6,28 L8,28 L8,26 L10,26 L10,28 L12,28 L12,26 L14,26 L14,28 L16,28 L16,26 L18,26 L18,28 L20,28 L20,26 L22,26 L22,28 L24,28 L24,26 L26,26 L26,24 L28,24 L28,22 L26,22 L26,20 L28,20 L28,18 L26,18 L26,16 L28,16 L28,14 L26,14 L26,12 L28,12 L28,10 L26,10 L26,8 L28,8 L28,6 L26,6 L26,4 Z M24,24 L8,24 L8,8 L24,8 L24,24 Z"
                                             id="Shape" fill-rule="nonzero"></path>
-                                        <polygon id="Shape" fill-rule="nonzero" points="28 4 30 4 30 6 28 6">
-                                        </polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="28 4 30 4 30 6 28 6"></polygon>
                                         <polygon id="Shape" fill-rule="nonzero" points="28 8 30 8 30 10 28 10">
                                         </polygon>
                                         <polygon id="Shape" fill-rule="nonzero" points="28 12 30 12 30 14 28 14">
@@ -919,10 +936,8 @@
                                         </polygon>
                                         <polygon id="Shape" fill-rule="nonzero" points="30 30 32 30 32 32 30 32">
                                         </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="30 2 32 2 32 4 30 4">
-                                        </polygon>
-                                        <polygon id="Shape" fill-rule="nonzero" points="30 6 32 6 32 8 30 8">
-                                        </polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="30 2 32 2 32 4 30 4"></polygon>
+                                        <polygon id="Shape" fill-rule="nonzero" points="30 6 32 6 32 8 30 8"></polygon>
                                         <polygon id="Shape" fill-rule="nonzero" points="30 10 32 10 32 12 30 12">
                                         </polygon>
                                         <polygon id="Shape" fill-rule="nonzero" points="30 14 32 14 32 16 30 16">
@@ -953,7 +968,14 @@
                     </button>
                 </li>
             </ul>
-            <a href=""><button class="btn split-button " id="spl">Convert To PDF</button></a>
+            <div class="html-set">
+                <h5>HTML Settings</h5>
+                <p><input type="checkbox" id="mergeCheckbox">Try to block ads
+                </p>
+                <p><input type="checkbox" id="mergeCheckbox">Remove overlay popups </p>
+            </div>
+
+            <button class="split-button " id="spl">Convert To PDF</button>
         </div>
     </div>
     </div>
@@ -1031,10 +1053,6 @@
             }
         }
 
-    </script>
-    </div>
-    <script src="../header.js"></script>
-    <script>
         marginOptions = document.querySelectorAll(".option__image__item");
 
         marginOptions.forEach(option => {
@@ -1053,6 +1071,8 @@
             })
         })
     </script>
+    <script src="../header.js"></script>
+    </div>
 </body>
 
 </html>
